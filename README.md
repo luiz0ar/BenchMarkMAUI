@@ -1,7 +1,7 @@
-1. REQUISITOS
+REQUISITOS
 IDE: Visual Studio 2022
 
-2. CONFIGURAÇÃO (Configuration)
+CONFIGURAÇÃO (Configuration)
 ARQUIVO: appsettings.json
 AÇÃO: Modificar a Url com a URL da sua API.
 
@@ -20,7 +20,7 @@ internal static class Secrets
     internal const string ApiKey = "CHAVE_DA_API";
 }
 
-3. EXECUÇÃO (Run)
+EXECUÇÃO (Run)
 ABRIR a solução MauiApp2.sln no Visual Studio.
 
 SELECIONAR o dispositivo de destino na barra de ferramentas
