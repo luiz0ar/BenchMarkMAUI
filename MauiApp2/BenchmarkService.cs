@@ -7,7 +7,7 @@ namespace MauiApp2;
 public class BenchmarkService
 {
     private readonly IConfiguration _configuration;
-    private static readonly HttpClient client = new();
+    private static readonly HttpClient Client = new();
 
     public BenchmarkService(IConfiguration configuration)
     {
@@ -54,7 +54,7 @@ public class BenchmarkService
             using var request = new HttpRequestMessage(HttpMethod.Get, url);
             request.Headers.Add("X-API-Key", apiKey);
 
-            var response = await client.SendAsync(request);
+            var response = await Client.SendAsync(request);
             stopwatch.Stop();
 
             if (response.IsSuccessStatusCode)
