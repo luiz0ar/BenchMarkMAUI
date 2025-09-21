@@ -1,6 +1,6 @@
 ﻿namespace MauiApp2;
 
-public partial class MainPage : ContentPage
+public partial class MainPage
 {
     private readonly BenchmarkService _benchmarkService;
 
