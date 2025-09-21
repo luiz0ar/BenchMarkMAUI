@@ -1,37 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp2.MainPage">
+             x:Class="MauiApp2.MainPage"
+             BackgroundColor="White">
 
-    <ScrollView>
-        <VerticalStackLayout Spacing="15" Padding="20">
+    <Grid RowDefinitions="Auto, *, Auto">
 
-            <Label Text="Selecione o Benchmark"
-                   FontSize="24"
+        <Grid Grid.Row="0"
+              Padding="15,20"
+              ColumnDefinitions="Auto, *, Auto"
+              BackgroundColor="LightGray">
+            
+            <Label Grid.Column="1"
+                   Text="Home"
+                   FontSize="20"
                    FontAttributes="Bold"
+                   TextColor="Black"
+                   VerticalOptions="Start"
+                   HorizontalOptions="Start" />
+
+        </Grid>
+
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Spacing="15" Padding="20">
+
+                <Label Text="Selecione o Benchmark"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center" />
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Button x:Name="FibButton" 
+                            Text="Fibonacci" 
+                            Clicked="OnFibonacciClicked" />
+                    <Button x:Name="ApiButton" 
+                            Text="API Request" 
+                            Clicked="OnApiBenchClicked" />
+                </HorizontalStackLayout>
+
+                <ActivityIndicator x:Name="LoadingIndicator" 
+                                   IsRunning="False" />
+
+                <Label Text="Resultados:" FontSize="18"/>
+                <Border Padding="10" Stroke="LightGray" StrokeThickness="1">
+                    <Editor x:Name="ResultsEditor"
+                            Placeholder="Os resultados aparecerão aqui..."
+                            HeightRequest="300"
+                            IsReadOnly="True" 
+                            FontFamily="Monospace" />
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+        
+        <Grid Grid.Row="2"
+              Padding="15,20"
+              ColumnDefinitions="Auto, *, Auto"
+              BackgroundColor="DarkGray">
+            
+            <Label Grid.Column="1"
+                   Text="lfarcanjo.rangel@gmail.com | +55 35 987219806"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   TextColor="Gray"
+                   VerticalOptions="Center"
                    HorizontalOptions="Center" />
-
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Button x:Name="FibButton" 
-                        Text="Fibonacci(40)" 
-                        Clicked="OnFibonacciClicked" />
-                <Button x:Name="ApiButton" 
-                        Text="API Request" 
-                        Clicked="OnApiBenchClicked" />
-            </HorizontalStackLayout>
-
-            <ActivityIndicator x:Name="LoadingIndicator" 
-                               IsRunning="False" />
-
-            <Label Text="Resultados:" FontSize="18"/>
-            <Border Padding="10" Stroke="LightGray" StrokeThickness="1">
-                <Editor x:Name="ResultsEditor"
-                        Placeholder="Os resultados aparecerão aqui..."
-                        HeightRequest="300"
-                        IsReadOnly="True" 
-                        FontFamily="Monospace" />
-            </Border>
-
-        </VerticalStackLayout>
-    </ScrollView>
+        </Grid>
+    </Grid>
 </ContentPage>
