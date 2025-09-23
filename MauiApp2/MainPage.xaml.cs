@@ -8,6 +8,7 @@ public partial class MainPage
     {
         InitializeComponent();
         _benchmarkService = benchmarkService;
+        Footer.Text = $"© {DateTime.Now.Year} Luiz Felipe Arcanjo Rangel";
     }
 
     private async void OnFibonacciClicked(object sender, EventArgs e)
