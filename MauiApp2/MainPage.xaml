@@ -59,7 +59,7 @@
               BackgroundColor="DarkGray">
             
             <Label Grid.Column="1"
-                   Text="lfarcanjo.rangel@gmail.com | +55 35 987219806"
+                   x:Name="Footer"
                    FontSize="12"
                    FontAttributes="Bold"
                    TextColor="Gray"
